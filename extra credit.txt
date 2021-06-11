@@ -1,0 +1,17 @@
+select * from artist a
+order by a.name desc
+limit 10 ;
+
+select * from artist
+where name ilike 'Black_%';
+
+select * from artist
+where name ilike '%Black%';
+
+select birth_date, first_name, last_name from employee
+order by employee.birth_date desc
+limit 1;
+
+select birth_date, first_name, last_name from employee
+order by employee.birth_date asc
+limit 1;
