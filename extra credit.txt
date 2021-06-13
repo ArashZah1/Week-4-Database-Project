@@ -15,3 +15,24 @@ limit 1;
 select birth_date, first_name, last_name from employee
 order by employee.birth_date asc
 limit 1;
+
+select count(*) from invoice
+where billing_state in (
+'CA','TX','AZ'
+);
+
+select avg(total) from invoice;
+
+select name from track
+where  track_id in (
+select track_id from playlist_track where playlist_id = 5
+);
+
+select track.name "Track Name", playlist.name "Playlist Name" from track
+join playlist_track on playlist_track.track_id = track.track_id
+join playlist on playlist.playlist_id = playlist_track.playlist_id;
+
+select t.name, al.title, g.name from track t
+join album al on t.album_id = al.album_id
+join genre g on g.genre_id = t.genre_id
+where g.name = 'Alternative & Punk';
